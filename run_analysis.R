@@ -18,6 +18,9 @@ S <- rbind(s_train, s_test)
 #2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
 ######################################################################
 features <- read.table("UCI HAR Dataset/features.txt")
+# only the ones with "mean" or "std" on the names
+searched_features1 <- grep("-(mean|std)\\(\\)", features[, 2])
+
 
 
 ######################################################################
