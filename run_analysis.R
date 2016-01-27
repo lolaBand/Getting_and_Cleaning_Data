@@ -2,17 +2,17 @@
 #1.	Merges the training and the test sets to create one data set.
 ######################################################################
 
-temp1 <- read.table("UCI HAR Dataset/train/X_train.txt")
-temp2 <- read.table("UCI HAR Dataset/test/X_test.txt")
-X <- rbind(temp1, temp2)
+x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
+X <- rbind(x_train, x_test)
 
-temp1 <- read.table("UCI HAR Dataset/train/subject_train.txt")
-temp2 <- read.table("UCI HAR Dataset/test/subject_test.txt")
-S <- rbind(temp1, temp2)
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt")
+y_test <- read.table("UCI HAR Dataset/test/y_test.txt")
+Y <- rbind(y_train, y_test)
 
-temp1 <- read.table("UCI HAR Dataset/train/y_train.txt")
-temp2 <- read.table("UCI HAR Dataset/test/y_test.txt")
-Y <- rbind(temp1, temp2)
+s_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
+s_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
+S <- rbind(s_train, s_test)
 
 ######################################################################
 #2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
