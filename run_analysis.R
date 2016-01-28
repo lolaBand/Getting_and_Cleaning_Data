@@ -27,15 +27,20 @@ X <- X[, searched_features]
 names(X) <- features[searched_features, 2]
 #eliminate the "()"
 names(X) <- gsub("\\(|\\)", "", names(X))
-print("-------------------------")
-print(names(X))
+#print(names(X))
 
 
 ######################################################################
 #3.	Uses descriptive activity names to name the activities in the data set
 ######################################################################
-activity <- read.table("UCI HAR Dataset/activity_labels.txt")
-
+activities <- read.table("UCI HAR Dataset/activity_labels.txt")
+#print(activities)
+# set Y has the id of the activities (only column)
+# establish name of activity (2nd column of activities) in the unique column of Y set
+Y[,1] = activities[Y[,1], 2]
+# set the name of the unique column: "activities"
+names(Y) <- "activities"
+#print(head(Y))
 
 ######################################################################
 #4.	Appropriately labels the data set with descriptive variable names. 
