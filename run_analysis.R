@@ -19,8 +19,16 @@ S <- rbind(s_train, s_test)
 ######################################################################
 features <- read.table("UCI HAR Dataset/features.txt")
 # only the ones with "mean" or "std" on the names
-searched_features1 <- grep("-(mean|std)\\(\\)", features[, 2])
-
+searched_features <- grep("-(mean|std)\\(\\)", features[, 2])
+#print(searched_features)
+# subset with the searched_features
+X <- X[, searched_features]
+# the names of the only selected feature
+names(X) <- features[searched_features, 2]
+#eliminate the "()"
+names(X) <- gsub("\\(|\\)", "", names(X))
+print("-------------------------")
+print(names(X))
 
 
 ######################################################################
